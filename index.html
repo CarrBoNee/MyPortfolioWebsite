@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio - [Your Name]</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#writings">Writings</a></li>
+                <li><a href="#art">Art</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Welcome to [Your Name]'s Creative World</h1>
+        <p>Explore my writings, art, and music.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m [Your Name]! I’m a creative individual passionate about expressing ideas through various mediums. My portfolio includes writings, drawings, and music. I hope to share my vision and inspire others through my work.</p>
+    </section>
+
+    <section id="writings">
+        <h2>Writings</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <h3>Title of Piece</h3>
+                <p>Short description of the writing piece or excerpt...</p>
+                <a href="writings/sample1.pdf" target="_blank">Read More</a>
+            </div>
+            <div class="gallery-item">
+                <h3>Title of Piece</h3>
+                <p>Short description of the writing piece or excerpt...</p>
+                <a href="writings/sample2.pdf" target="_blank">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="art">
+        <h2>Art</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="art/drawing1.jpg" alt="Art Piece 1">
+                <p>Title of Drawing</p>
+            </div>
+            <div class="gallery-item">
+                <img src="art/drawing2.jpg" alt="Art Piece 2">
+                <p>Title of Drawing</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Music</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <p>Track Name</p>
+                <audio controls>
+                    <source src="music/track1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="gallery-item">
+                <p>Track Name</p>
+                <audio controls>
+                    <source src="music/track2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for collaborations, feedback, or inquiries!</p>
+        <form action="https://formspree.io/f/your-email" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; [Year] [Your Name]. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
