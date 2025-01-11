@@ -35,5 +35,28 @@
     <footer>
         <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.querySelector('audio');
+            const body = document.body;
+    
+            // Change to GIF when song plays
+            audio.addEventListener('play', () => {
+                body.style.background = "url('giphy1.gif') no-repeat center center fixed";
+                body.style.backgroundSize = "cover";
+            });
+    
+            // Revert to white when paused
+            audio.addEventListener('pause', () => {
+                body.style.background = "white";
+            });
+    
+            // Revert to white when the song ends
+            audio.addEventListener('ended', () => {
+                body.style.background = "white";
+            });
+        });
+    </script>
+    
 </body>
 </html>
