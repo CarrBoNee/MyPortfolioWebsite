@@ -1,5 +1,99 @@
 /* Default body styling */
 body {
-    background-color: white; /* Default white background */
+    background-color: white; /* Default background color for subpages */
     transition: background 0.3s ease; /* Smooth transition for background changes */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Simple and clean font */
+}
+
+/* Home Page Styling */
+body.home {
+    background: url('art/art4.jpg') no-repeat center center fixed; /* Use art4.jpg as the background */
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+.home-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    justify-content: center; /* Center links vertically */
+    align-items: center; /* Center links horizontally */
+    height: 100vh; /* Full screen height */
+    gap: 40px; /* Space between links */
+}
+
+.home-nav a {
+    text-decoration: none;
+    color: white; /* White text for contrast against the background */
+    font-size: 36px; /* Larger font size for better visibility */
+    font-weight: bold;
+    text-transform: uppercase; /* All caps for titles */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.home-nav a:hover {
+    color: lightgray; /* Slight color change on hover */
+}
+
+/* Art Gallery Styling */
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin: 20px; /* Space around the grid */
+}
+
+.art-item img {
+    width: 100%; /* Ensure the image fits within its grid cell */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    object-fit: contain; /* Prevent zooming by fitting the image within the container */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.art-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Header Navigation (Subpages) */
+header nav ul {
+    list-style: none; /* Remove bullets */
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 20px; /* Space between links */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for nav */
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white; /* Default link color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    opacity: 1; /* Ensure links are visible by default */
+}
+
+header nav ul li a:hover {
+    color: lightgray; /* Slight hover effect */
+    opacity: 1; /* Maintain visibility on hover */
+}
+
+
+/* Video Section Styling */
+#motivation-video {
+    display: flex;
+    justify-content: center; /* Center the video horizontally */
+    margin: 20px 0;
+}
+
+#motivation-video video {
+    max-width: 100%;
+    height: auto; /* Ensure the video scales properly */
+    border-radius: 10px; /* Rounded corners for video */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
