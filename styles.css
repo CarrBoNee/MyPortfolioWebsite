@@ -6,6 +6,20 @@ body {
     font-family: Arial, sans-serif; /* Simple and clean font */
 }
 
+/* Global page alignment */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes the full viewport height */
+}
+
+main {
+    flex: 1; /* Allow the main content to stretch and fill available space */
+}
+
+
 /* Home Page Styling */
 body.home {
     background: url('art/art4.jpg') no-repeat center center fixed; /* Use art4.jpg as the background */
@@ -96,4 +110,21 @@ header nav ul li a:hover {
     height: auto; /* Ensure the video scales properly */
     border-radius: 10px; /* Rounded corners for video */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+/* Motivation Page Styling */
+body.motivation-page {
+    font-style: italic; /* Italicize all text on the Motivation page */
+}
+
+body.motivation-page h1 {
+    font-size: 2.5rem; /* Larger heading for the page title */
+    text-align: center; /* Center-align the title */
+    margin-top: 20px; /* Add spacing from the top */
+}
+
+body.motivation-page video {
+    display: block;
+    margin: 20px auto; /* Center the video horizontally */
+    border: 2px solid #ccc; /* Add a subtle border */
+    border-radius: 10px; /* Rounded corners */
 }
