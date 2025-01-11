@@ -58,6 +58,17 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+
+        <!-- fifth Song -->
+
+        <div class="gallery-item">
+            <p>play5</p>
+            <audio controls>
+                <source src="music/play5.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
         
         
     </section>
@@ -79,23 +90,54 @@
                     ? 'giphy2.gif'
                     : index === 2
                     ? 'giphy3.gif'
-                    : 'giphy4.gif';
+                    : index === 3
+                    ? 'giphy4.gif'
+                    : 'giphy5.gif'; // Added giphy5
     
                 audio.addEventListener('play', () => {
-                    body.style.background = `url('${gif}') no-repeat center center fixed`;
+                    // Pause all other audio elements
+                    audioElements.forEach((otherAudio) => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                        }
+                    });
+    
+                    // Update the background for the current song
+                    body.style.backgroundImage = `url('${gif}')`;
                     body.style.backgroundSize = "cover";
+                    body.style.backgroundPosition = "center";
+                    body.style.backgroundRepeat = "no-repeat";
                 });
     
                 audio.addEventListener('pause', () => {
-                    body.style.background = "white";
+                    // Reset the background to white if no other song is playing
+                    const isAnyPlaying = Array.from(audioElements).some(
+                        (otherAudio) => !otherAudio.paused
+                    );
+    
+                    if (!isAnyPlaying) {
+                        body.style.backgroundImage = "none";
+                    }
                 });
     
                 audio.addEventListener('ended', () => {
-                    body.style.background = "white";
+                    // Reset the background to white if no other song is playing
+                    const isAnyPlaying = Array.from(audioElements).some(
+                        (otherAudio) => !otherAudio.paused
+                    );
+    
+                    if (!isAnyPlaying) {
+                        body.style.backgroundImage = "none";
+                    }
                 });
             });
         });
     </script>
+    
+    
+
+    
+    
     
     
 

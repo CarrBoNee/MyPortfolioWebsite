@@ -1,5 +1,5 @@
+/* Default body styling */
 body {
-    background-color: white;
+    background-color: white; /* Default white background */
+    transition: background 0.3s ease; /* Smooth transition for background changes */
 }
-
-
