@@ -68,6 +68,17 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+
+        <!-- sixth Song --> 
+
+        <div class="gallery-item">
+            <p>play6</p>
+            <audio controls>
+                <source src="music/play6.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
         
         
         
@@ -92,7 +103,9 @@
                     ? 'giphy3.gif'
                     : index === 3
                     ? 'giphy4.gif'
-                    : 'giphy5.gif'; // Added giphy5
+                    : index === 4
+                    ? 'giphy5.gif'
+                    : 'giphy6.gif'; // Added giphy6
     
                 audio.addEventListener('play', () => {
                     // Pause all other audio elements
@@ -133,6 +146,7 @@
             });
         });
     </script>
+    
     
     
 
