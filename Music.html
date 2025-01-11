@@ -49,6 +49,16 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+
+        <!-- fourth Song -->
+        <div class="gallery-item">
+            <p>play4</p>
+            <audio controls>
+                <source src="music/play4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
         
     </section>
 </main>
@@ -63,7 +73,13 @@
     
             audioElements.forEach((audio, index) => {
                 // Assign different GIFs based on the index
-                const gif = index === 0 ? 'giphy1.gif' : index === 1 ? 'giphy2.gif' : 'giphy3.gif';
+                const gif = index === 0
+                    ? 'giphy1.gif'
+                    : index === 1
+                    ? 'giphy2.gif'
+                    : index === 2
+                    ? 'giphy3.gif'
+                    : 'giphy4.gif';
     
                 audio.addEventListener('play', () => {
                     body.style.background = `url('${gif}') no-repeat center center fixed`;
@@ -80,6 +96,7 @@
             });
         });
     </script>
+    
     
 
     
