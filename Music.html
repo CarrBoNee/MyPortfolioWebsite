@@ -20,7 +20,7 @@
     <main>
     <h1>Music</h1>
     <section id="music">
-        
+
         <!-- First Song -->
         <div class="gallery">
             <div class="gallery-item">
@@ -48,27 +48,30 @@
         <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const audio = document.querySelector('audio');
-            const body = document.body;
-    
-            // Change to GIF when song plays
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioElements = document.querySelectorAll('audio');
+        const body = document.body;
+
+        audioElements.forEach((audio, index) => {
+            // Assign different GIFs based on the index (0 for play1, 1 for play2)
+            const gif = index === 0 ? 'giphy1.gif' : 'giphy2.gif';
+
             audio.addEventListener('play', () => {
-                body.style.background = "url('giphy1.gif') no-repeat center center fixed";
+                body.style.background = `url('${gif}') no-repeat center center fixed`;
                 body.style.backgroundSize = "cover";
             });
-    
-            // Revert to white when paused
+
             audio.addEventListener('pause', () => {
                 body.style.background = "white";
             });
-    
-            // Revert to white when the song ends
+
             audio.addEventListener('ended', () => {
                 body.style.background = "white";
             });
         });
-    </script>
+    });
+</script>
+
     
 </body>
 </html>
