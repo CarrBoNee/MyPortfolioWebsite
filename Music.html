@@ -40,6 +40,15 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+
+        <!-- Third Song -->
+        <div class="gallery-item">
+            <p>play3</p>
+            <audio controls>
+                <source src="music/play3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         
     </section>
 </main>
@@ -48,29 +57,30 @@
         <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
     </footer>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const audioElements = document.querySelectorAll('audio');
-        const body = document.body;
-
-        audioElements.forEach((audio, index) => {
-            // Assign different GIFs based on the index (0 for play1, 1 for play2)
-            const gif = index === 0 ? 'giphy1.gif' : 'giphy2.gif';
-
-            audio.addEventListener('play', () => {
-                body.style.background = `url('${gif}') no-repeat center center fixed`;
-                body.style.backgroundSize = "cover";
-            });
-
-            audio.addEventListener('pause', () => {
-                body.style.background = "white";
-            });
-
-            audio.addEventListener('ended', () => {
-                body.style.background = "white";
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioElements = document.querySelectorAll('audio');
+            const body = document.body;
+    
+            audioElements.forEach((audio, index) => {
+                // Assign different GIFs based on the index
+                const gif = index === 0 ? 'giphy1.gif' : index === 1 ? 'giphy2.gif' : 'giphy3.gif';
+    
+                audio.addEventListener('play', () => {
+                    body.style.background = `url('${gif}') no-repeat center center fixed`;
+                    body.style.backgroundSize = "cover";
+                });
+    
+                audio.addEventListener('pause', () => {
+                    body.style.background = "white";
+                });
+    
+                audio.addEventListener('ended', () => {
+                    body.style.background = "white";
+                });
             });
         });
-    });
-</script>
+    </script>
+    
 
     
 </body>
