@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Story</title>
+        <link rel="stylesheet" href="styles.css"> <!-- Main styles -->
+        <link rel="stylesheet" href="timeline.css"> <!-- Timeline-specific styles -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
+    </head>
+    
+<body>
+    <!-- Navigation -->
+    <nav class="subpage-nav">
+        <a href="index.html">Home</a>
+        <a href="Art.html">Art</a>
+        <a href="Music.html">Music</a>
+        <a href="writings.html">Writings</a>
+        <a href="Motivation.html">Motivation</a>
+    </nav>
+
+    <!-- Timeline Container -->
+    <main>
+        <h1>My Story</h1>
+        
+        <!-- Arrows and Labels -->
+        <div class="timeline-arrows">
+            <div class="arrow left">
+                <p>Childhood</p>
+                <span>&larr;</span>
+            </div>
+            <div class="arrow right">
+                <p>Teenage Years</p>
+                <span>&rarr;</span>
+            </div>
+        </div>
+    
+        <!-- Timeline Wrapper and Container -->
+        <div id="timeline-wrapper" style="overflow-x: auto; overflow-y: hidden;">
+            <div id="timeline-container"></div>
+        </div>
+    </main>
+    
+    
+    
+
+    <!-- JavaScript for the Timeline -->
+    <script>
+        var container = document.getElementById('timeline-container');
+        var items = new vis.DataSet([
+    { id: 1, content: '<a href="born.html">Born - March 6, 2000</a>', start: '2000-03-06', className: 'timeline-event' },
+    { id: 2, content: '<a href="move.html">Moved - May 2008</a>', start: '2008-05-01', className: 'timeline-event' },
+    { 
+        id: 3, 
+        content: '<a href="Atlanta.html"><img src="art/widetest.jpg" alt="Atlanta"></a>', 
+        start: '2000-03-06', 
+        end: '2008-05-01', 
+        className: 'timeline-image' 
+    }
+]);
+
+
+
+
+
+
+
+
+var options = {
+    orientation: 'bottom', // Horizontal timeline
+    zoomable: false, // Disable zoom functionality
+    horizontalScroll: true, // Enable horizontal scrolling
+    verticalScroll: false, // Disable vertical scrolling
+    minHeight: '600px',
+    start: '2000-01-01', // Initial start date
+    min: '2000-01-01', // Earliest date
+    max: '2030-01-01'  // Latest date
+};
+
+var timeline = new vis.Timeline(container, items, options);
+
+
+
+
+
+    </script>
+</body>
+</html>
