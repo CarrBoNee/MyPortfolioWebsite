@@ -7,7 +7,7 @@ body.jonkoping-page {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-    background-color: #eef6f9; /* Light blue background for Jönköping */
+    background-color: #e3f2fd; /* Light background color for Jönköping */
     font-family: Arial, sans-serif;
     overflow: hidden; /* Prevent scrolling */
 }
@@ -51,18 +51,4 @@ nav a:hover {
     margin: 0;
     padding: 0;
     display: block; /* Ensure the image behaves as a block element */
-}
-
-/* Content Section Styling */
-.content {
-    width: 90%;
-    max-width: 800px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin: 0 auto; /* Center-align content */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #fff; /* White background for text */
 }
