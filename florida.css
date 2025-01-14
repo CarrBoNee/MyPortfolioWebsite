@@ -3,21 +3,25 @@ body.florida-page {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stack the title and image/text vertically */
+    flex-direction: column; /* Stack the title and image vertically */
     justify-content: center;
     align-items: center;
-    background-color: #fdf6e3; /* Light sunny background color */
+    height: 100vh; /* Full viewport height */
+    background-color: #fdf6e3; /* Light background color for Florida */
     font-family: Arial, sans-serif;
-    overflow: auto; /* Enable scrolling for larger content */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Title Styling */
 .page-title {
-    font-size: 2.5rem; /* Large font size */
+    position: absolute;
+    top: 10px; /* Position at the top */
+    font-size: 2rem; /* Large, clear font size */
     font-weight: bold;
-    color: #333; /* Neutral color for visibility */
-    margin-top: 20px;
+    color: #222; /* Neutral color for visibility */
     text-align: center;
+    margin: 0;
+    z-index: 2; /* Ensure it stays above the image */
 }
 
 /* Navigation Link Styling */
@@ -40,23 +44,11 @@ nav a:hover {
 
 /* Large Image Styling */
 .large-image-container img {
-    width: 90%; /* Scale the image to fit the width */
-    max-height: 400px; /* Ensure the image doesn't dominate the page */
-    object-fit: cover; /* Crop to fit the container */
-    border-radius: 10px; /* Rounded corners */
-    margin: 20px 0; /* Add spacing */
-}
-
-/* Content Section Styling */
-.content {
-    width: 90%;
-    max-width: 800px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin: 0 auto; /* Center-align content */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #fff; /* White background for text */
+    max-width: 100%; /* Scale the image to fit the width */
+    max-height: 100%; /* Scale the image to fit the height */
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 10px; /* Optional: Add rounding to the image corners */
+    margin: 0;
+    padding: 0;
+    display: block; /* Ensure the image behaves as a block element */
 }

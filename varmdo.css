@@ -1,0 +1,54 @@
+/* Styling for the Värmdö subpage */
+body.varmdo-page {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack the title and image vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #fdf6e3; /* Light background color */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Title Styling */
+.page-title {
+    position: absolute;
+    top: 10px; /* Position at the top */
+    font-size: 2rem; /* Large, clear font size */
+    font-weight: bold;
+    color: #222; /* Neutral color for visibility */
+    text-align: center;
+    margin: 0;
+    z-index: 2; /* Ensure it stays above the image */
+}
+
+/* Navigation Link Styling */
+nav {
+    position: absolute; /* Position at the top-left */
+    top: 10px;
+    left: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Large Image Styling */
+.large-image-container img {
+    max-width: 100%; /* Scale the image to fit the width */
+    max-height: 100%; /* Scale the image to fit the height */
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 10px; /* Optional: Add rounding to the image corners */
+    margin: 0;
+    padding: 0;
+    display: block; /* Ensure the image behaves as a block element */
+}
