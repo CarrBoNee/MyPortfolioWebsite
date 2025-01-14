@@ -1,13 +1,13 @@
-/* Timeline Page Styling */
-body.timeline-page {
-    background-color: white; /* Ensure a clean background for the timeline */
+/* General Styling */
+body.story-page {
+    background-color: white; /* Clean background */
     font-family: Arial, sans-serif; /* Match the rest of the site's font */
     color: #333; /* Neutral text color */
     margin: 0;
     padding: 0;
 }
 
-.timeline-page h1 {
+.story-page h1 {
     text-align: center;
     font-size: 2.5rem;
     margin: 20px 0;
@@ -15,96 +15,71 @@ body.timeline-page {
     color: #222;
 }
 
-/* Timeline Container */
-#timeline-container {
-    margin: 20px auto;
-    width: 95%; /* Allow the timeline to take most of the screen width */
-    height: 800px; /* Increase height for better visibility */
-    overflow: hidden; /* Prevent scrollbars */
-    position: relative; /* Necessary for child positioning */
-    background-color: white; /* Set a clean background */
+.story-page p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0 30px;
 }
 
-/* Highlighted Timeline Range */
-.timeline-highlight {
-    background-color: rgba(135, 206, 250, 0.5); /* Light blue highlight */
-    border: none; /* Remove borders for the range */
-    height: 40px; /* Adjust height to match the design */
+/* Era Grid Styles */
+.era-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 10px; /* Add padding for smaller screens */
 }
 
-.timeline-image img {
-    width: 100%; /* Stretch the image to the full width of the event */
-    height: 35vh; /* Make the image take up 35% of the viewport height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 10px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for better visibility */
+.era-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    width: 80%; /* Make it responsive to screen size */
+    max-width: 600px; /* Limit maximum size */
 }
-.timeline-image img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+
+.era-item img {
+    width: 100%;
+    height: auto; /* Automatically adjust height to show more of the picture */
+    object-fit: cover; /* Ensure proper cropping if necessary */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.era-item:hover img {
+    transform: scale(1.02); /* Slight zoom effect */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
-
-/* Timeline Event Styling */
-.vis-item {
-    font-size: 14px;
+.era-label {
+    margin-top: 10px;
+    font-size: 1.5em;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* Allow fine-tuned positioning */
-    top: 20px; /* Push events slightly lower to make room for the image */
+    text-align: center;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .era-item {
+        width: 90%; /* Adjust width for smaller screens */
+    }
 
-.vis-item:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    background-color: #f0f0f0; /* Light gray hover background */
+    .era-label {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
 }
 
-
-/* Timeline Axis Styling */
-.vis-time-axis .vis-text {
-    font-size: 12px; /* Keep axis text compact */
-    color: #555; /* Neutral color for axis text */
-}
-
-/* Navigation Arrows */
-.timeline-arrows {
+/* Vertical Layout for Eras */
+.era-list {
     display: flex;
-    justify-content: space-between; /* Align arrows to the sides */
+    flex-direction: column;
     align-items: center;
-    margin: 20px auto;
-    width: 90%; /* Center within the page */
+    gap: 20px; /* Space between items */
+    margin-top: 20px;
+    padding: 0 10px; /* Add padding for smaller screens */
 }
 
-.arrow {
-    display: flex;
-    flex-direction: column; /* Label above the arrow */
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.arrow span {
-    font-size: 24px; /* Make arrows larger */
-    color: #555;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.arrow span:hover {
-    color: #000; /* Darken the arrow on hover */
-}
-
-/* Align Left Arrow */
-.arrow.left {
-    text-align: left;
-}
-
-/* Align Right Arrow */
-.arrow.right {
-    text-align: right;
-}
