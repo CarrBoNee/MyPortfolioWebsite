@@ -111,6 +111,7 @@ header nav ul li a:hover {
     border-radius: 10px; /* Rounded corners for video */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 /* Motivation Page Styling */
 body.motivation-page {
     font-style: italic; /* Italicize all text on the Motivation page */
