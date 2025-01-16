@@ -1,0 +1,28 @@
+/* Art Page Styling */
+body.art-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark text */
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling */
+nav.subpage-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #222; /* Dark background for navigation */
+    padding: 10px;
+}
+
+nav.subpage-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav.subpage-nav a:hover {
+    color: #ff9800; /* Highlight color on hover */
+}
