@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="music.css"> <!-- Now using correct CSS file -->
 </head>
-<body>
+<body class="music-page">
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Art.html">Art</a></li>
-                <li><a href="Music.html">Music</a></li>
-                <li><a href="writings.html">Writings</a></li>
-                <li><a href="Motivation.html">Motivation</a></li>
-            </ul>
+        <nav class="subpage-nav">
+            <a href="index.html">Home</a>
+            <a href="Motivation.html">Motivation Letter</a>
+            <a href="MyStory.html">My Story</a>
+            <a href="Writings.html">Writings</a>
+            <a href="Music.html">Music</a>
+            <a href="Art.html">Art</a>
         </nav>
     </header>
     
     <main>
-    <h1>Music</h1>
-    <section id="music">
-
-        <!-- First Song -->
-        <div class="gallery">
+        <h1>Music</h1>
+        <section id="music">
+            <!-- First Song -->
             <div class="gallery-item">
                 <p>play1</p>
                 <audio controls>
@@ -32,69 +29,63 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-        </div>
 
-        <!-- Second Song -->
-        <div class="gallery-item">
-            <p>play2</p>
-            <audio controls>
-                <source src="music/play2.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+            <!-- Second Song -->
+            <div class="gallery-item">
+                <p>play2</p>
+                <audio controls>
+                    <source src="music/play2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
-        <!-- Third Song -->
-        <div class="gallery-item">
-            <p>play3</p>
-            <audio controls>
-                <source src="music/play3.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+            <!-- Third Song -->
+            <div class="gallery-item">
+                <p>play3</p>
+                <audio controls>
+                    <source src="music/play3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
-        <!-- fourth Song -->
-        <div class="gallery-item">
-            <p>play4</p>
-            <audio controls>
-                <source src="music/play4.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+            <!-- Fourth Song -->
+            <div class="gallery-item">
+                <p>play4</p>
+                <audio controls>
+                    <source src="music/play4.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
-        <!-- fifth Song -->
+            <!-- Fifth Song -->
+            <div class="gallery-item">
+                <p>play5</p>
+                <audio controls>
+                    <source src="music/play5.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
-        <div class="gallery-item">
-            <p>play5</p>
-            <audio controls>
-                <source src="music/play5.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <!-- sixth Song --> 
-
-        <div class="gallery-item">
-            <p>play6</p>
-            <audio controls>
-                <source src="music/play6.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-        
-        
-        
-        
-    </section>
-</main>
+            <!-- Sixth Song -->
+            <div class="gallery-item">
+                <p>play6</p>
+                <audio controls>
+                    <source src="music/play6.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audioElements = document.querySelectorAll('audio');
             const body = document.body;
-    
+
             audioElements.forEach((audio, index) => {
                 // Assign different GIFs based on the index
                 const gif = index === 0
@@ -108,7 +99,7 @@
                     : index === 4
                     ? 'giphy5.gif'
                     : 'giphy6.gif'; // Added giphy6
-    
+
                 audio.addEventListener('play', () => {
                     // Pause all other audio elements
                     audioElements.forEach((otherAudio) => {
@@ -116,31 +107,28 @@
                             otherAudio.pause();
                         }
                     });
-    
+
                     // Update the background for the current song
                     body.style.backgroundImage = `url('${gif}')`;
-                    body.style.backgroundSize = "cover";
-                    body.style.backgroundPosition = "center";
-                    body.style.backgroundRepeat = "no-repeat";
                 });
-    
+
                 audio.addEventListener('pause', () => {
-                    // Reset the background to white if no other song is playing
+                    // Reset the background if no other song is playing
                     const isAnyPlaying = Array.from(audioElements).some(
                         (otherAudio) => !otherAudio.paused
                     );
-    
+
                     if (!isAnyPlaying) {
                         body.style.backgroundImage = "none";
                     }
                 });
-    
+
                 audio.addEventListener('ended', () => {
-                    // Reset the background to white if no other song is playing
+                    // Reset the background if no other song is playing
                     const isAnyPlaying = Array.from(audioElements).some(
                         (otherAudio) => !otherAudio.paused
                     );
-    
+
                     if (!isAnyPlaying) {
                         body.style.backgroundImage = "none";
                     }
@@ -148,15 +136,5 @@
             });
         });
     </script>
-    
-    
-    
-
-    
-    
-    
-    
-
-    
 </body>
 </html>
