@@ -26,3 +26,51 @@ nav.subpage-nav a {
 nav.subpage-nav a:hover {
     color: #ff9800; /* Highlight color on hover */
 }
+
+/* Art Page Styling */
+body.art-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark text */
+    line-height: 1.6;
+}
+
+/* Art Gallery Grid */
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive and evenly distributed */
+    gap: 20px; /* Space between items */
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px; /* Limit grid width for better layout */
+}
+
+/* Art Item Styling */
+.art-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Styling */
+.art-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.art-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .art-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
