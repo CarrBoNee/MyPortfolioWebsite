@@ -1,0 +1,36 @@
+/* Motivation Page Styling */
+body.motivation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Video Sections */
+.video-section, #motivation-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+    width: 100%;
+    margin: 20px 0; /* Space between sections */
+}
+
+/* Titles for Each Video */
+.video-section h2, #motivation-video h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px; /* Space between title and video */
+}
+
+/* Embedded YouTube Videos */
+.video-section iframe, #motivation-video iframe {
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
+}
