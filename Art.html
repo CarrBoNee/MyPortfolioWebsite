@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
     <link rel="stylesheet" href="art.css">
+    <script defer src="art.js"></script> <!-- ✅ Load script for dynamic images -->
 </head>
 <body class="art-page">
     <header>
@@ -18,7 +19,6 @@
         </nav>
     </header>
     
-    
     <main>
         <h1>My Art</h1>
 
@@ -28,7 +28,7 @@
             Your browser does not support the audio element.
         </audio>
 
-        <!-- Art Gallery -->
+        <!-- Static Art Gallery (Your Existing Images) -->
         <section id="art-gallery">
             <div class="art-grid">
                 <div class="art-item">
@@ -45,10 +45,17 @@
                 </div>
             </div>
         </section>
-        
+
+        <!-- ✅ Dynamic Art Section for Additional Images -->
+        <section id="dynamic-art-gallery">
+            <div class="art-grid" id="art-container">
+                <!-- ✅ New images will be added dynamically -->
+            </div>
+        </section>
+
     </main>
     <footer>
-        <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
+        <p>&copy; 2025 [Julian Carbonnier Erlandsson]. All Rights Reserved</p>
     </footer>
 </body>
 </html>
