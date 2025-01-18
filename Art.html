@@ -22,13 +22,16 @@
     <main>
         <h1>My Art</h1>
 
-        <!-- Background music -->
-        <audio autoplay loop>
+        <!-- ✅ Background music with controls -->
+        <audio id="background-music" autoplay loop>
             <source src="music/playback1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
-        <!-- Static Art Gallery (Your Existing Images) -->
+        <!-- ✅ Music Control Button -->
+        <button id="toggle-music">Pause Music</button>
+
+        <!-- ✅ Static Art Gallery (Your Existing Images) -->
         <section id="art-gallery">
             <div class="art-grid">
                 <div class="art-item">
@@ -52,10 +55,28 @@
                 <!-- ✅ New images will be added dynamically -->
             </div>
         </section>
-
     </main>
+
     <footer>
-        <p>&copy; 2025 [Julian Carbonnier Erlandsson]. All Rights Reserved</p>
+        <p>&copy; 2025 Julian Carbonnier Erlandsson. All Rights Reserved.</p>
     </footer>
+
+    <!-- ✅ JavaScript for Music Control -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const music = document.getElementById("background-music");
+            const toggleButton = document.getElementById("toggle-music");
+
+            toggleButton.addEventListener("click", function () {
+                if (music.paused) {
+                    music.play();
+                    toggleButton.textContent = "Pause Music";
+                } else {
+                    music.pause();
+                    toggleButton.textContent = "Play Music";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
