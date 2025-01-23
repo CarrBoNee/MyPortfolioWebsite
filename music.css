@@ -1,20 +1,38 @@
-/* Music Page Styling */
-body.music-page {
+/* 🌍 Ensure full height for body and HTML */
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: white; /* Default background */
+    padding: 0;
+    overflow: hidden; /* Prevent extra scroll bars */
+}
+
+/* 🎵 Music Page Styling */
+body.music-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     transition: background 0.3s ease; /* Smooth background transition */
     color: #333; /* Dark text */
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-/* Navigation Bar - Matches Other Pages */
+/* 📌 Navigation Bar */
 nav.subpage-nav {
     display: flex;
     justify-content: center;
     gap: 15px;
-    background-color: #222; /* Dark background for navigation */
+    background-color: #222;
     padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 nav.subpage-nav a {
@@ -28,60 +46,63 @@ nav.subpage-nav a:hover {
     color: #ff9800; /* Highlight color on hover */
 }
 
-/* Centering Main Content */
+/* 📍 Centering Main Content */
 main {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 90vw; /* Prevent overflow */
+    margin-top: 60px; /* Avoid navbar overlap */
     padding: 10px;
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-/* Music Section Styling */
+/* 🎶 Music Section - Horizontal Layout */
 #music {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 30px;
+    flex-wrap: wrap; /* Allows wrapping if screen is too small */
+    justify-content: center;
+    gap: 15px; /* Space between items */
+    padding: 20px;
+    max-width: 90vw; /* Prevents overflow */
 }
 
-/* Music Player Styling */
+/* 🎛 Music Player Styling - Smaller and Compact */
 .gallery-item {
     background: rgba(255, 255, 255, 0.2); /* Light transparent background */
-    padding: 10px; /* Reduce padding */
-    border-radius: 12px; /* Round edges */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soften the shadow */
+    padding: 8px;
+    border-radius: 10px; /* Slightly rounded edges */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 80%; /* Reduce width */
-    max-width: 500px; /* Limit max width */
-    backdrop-filter: blur(5px); /* Subtle blur effect for better integration */
+    width: 200px; /* Fixed width */
+    max-width: 200px;
+    backdrop-filter: blur(5px); /* Subtle blur effect */
 }
 
+/* Reduce spacing for song titles */
 .gallery-item p {
     font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
+/* 🎵 Audio Player Styling */
 audio {
-    width: 100%; /* Make sure it fills the container */
-    background: transparent;
+    width: 100%; /* Full width inside box */
+    height: 30px; /* Compact height */
 }
 
-/* Background GIF Styling */
-body.music-page {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* 📉 Hide footer to remove white space */
+footer {
+    display: none;
 }
 
-/* Responsive Design */
+/* 📱 Responsive Design - Adjust for Smaller Screens */
 @media (max-width: 768px) {
+    #music {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
     .gallery-item {
-        width: 90%; /* Adjust for smaller screens */
+        width: 160px; /* Reduce size further on mobile */
     }
 }
