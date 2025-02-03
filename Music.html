@@ -83,6 +83,15 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
+
+            <!-- Eigth Song -->
+            <div class="gallery-item">
+                <p>weakside.V100</p>
+                <audio controls>
+                    <source src="music/weakside.V100.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </section>
     </main>
 
@@ -109,7 +118,9 @@
             ? 'giphy5.gif'
             : index === 5
             ? 'giphy6.gif'
-            : 'giphy7.gif'; // Added giphy7 for the seventh song (SMGreedV100)
+            : index === 6
+            ? 'giphy7.gif'
+            : 'giphy8.gif'; // Added giphy7 for the seventh song (SMGreedV100)
 
         audio.addEventListener('play', () => {
             // Pause all other audio elements
