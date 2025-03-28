@@ -91,6 +91,15 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
+
+             <!-- ninth Song -->
+             <div class="gallery-item">
+                <p>Hena</p>
+                <audio controls>
+                    <source src="music/14(Henav100).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </section>
     </main>
 
@@ -104,57 +113,55 @@
     const body = document.body;
 
     audioElements.forEach((audio, index) => {
-        // Assign different GIFs based on the index
-        const gif = index === 0
-            ? 'giphy1.gif'
-            : index === 1
-            ? 'giphy2.gif'
-            : index === 2
-            ? 'giphy3.gif'
-            : index === 3
-            ? 'giphy4.gif'
-            : index === 4
-            ? 'giphy5.gif'
-            : index === 5
-            ? 'giphy6.gif'
-            : index === 6
-            ? 'giphy7.gif'
-            : 'giphy8.gif'; // Added giphy7 for the seventh song (SMGreedV100)
+    // Assign different GIFs based on the index
+    const gif =
+        index === 0 ? 'giphy1.gif' :
+        index === 1 ? 'giphy2.gif' :
+        index === 2 ? 'giphy3.gif' :
+        index === 3 ? 'giphy4.gif' :
+        index === 4 ? 'giphy5.gif' :
+        index === 5 ? 'giphy6.gif' :
+        index === 6 ? 'giphy7.gif' :
+        index === 7 ? 'giphy8.gif' :
+        index === 8 ? 'giphy9.gif' :
+        ''; // fallback if out of range
 
-        audio.addEventListener('play', () => {
-            // Pause all other audio elements
-            audioElements.forEach((otherAudio) => {
-                if (otherAudio !== audio) {
-                    otherAudio.pause();
-                }
-            });
-
-            // Update the background for the current song
-            body.style.backgroundImage = `url('${gif}')`;
-        });
-
-        audio.addEventListener('pause', () => {
-            // Reset the background if no other song is playing
-            const isAnyPlaying = Array.from(audioElements).some(
-                (otherAudio) => !otherAudio.paused
-            );
-
-            if (!isAnyPlaying) {
-                body.style.backgroundImage = "none";
+    audio.addEventListener('play', () => {
+        // Pause all other audio elements
+        audioElements.forEach((otherAudio) => {
+            if (otherAudio !== audio) {
+                otherAudio.pause();
             }
         });
 
-        audio.addEventListener('ended', () => {
-            // Reset the background if no other song is playing
-            const isAnyPlaying = Array.from(audioElements).some(
-                (otherAudio) => !otherAudio.paused
-            );
-
-            if (!isAnyPlaying) {
-                body.style.backgroundImage = "none";
-            }
-        });
+        // Update the background for the current song
+        body.style.backgroundImage = `url('${gif}')`;
     });
+
+    audio.addEventListener('pause', () => {
+        // Reset the background if no other song is playing
+        const isAnyPlaying = Array.from(audioElements).some(
+            (otherAudio) => !otherAudio.paused
+        );
+
+        if (!isAnyPlaying) {
+            body.style.backgroundImage = "none";
+        }
+    });
+
+    audio.addEventListener('ended', () => {
+        // Reset the background if no other song is playing
+        const isAnyPlaying = Array.from(audioElements).some(
+            (otherAudio) => !otherAudio.paused
+        );
+
+        if (!isAnyPlaying) {
+            body.style.backgroundImage = "none";
+        }
+    });
+});
+
+
 });
 
     </script>
