@@ -100,6 +100,15 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
+
+            <!-- 10th Song -->
+            <div class="gallery-item">
+                <p>One Call</p>
+                <audio controls>
+                    <source src="music/One Call_4v100.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </section>
     </main>
 
@@ -124,6 +133,7 @@
         index === 6 ? 'giphy7.gif' :
         index === 7 ? 'giphy8.gif' :
         index === 8 ? 'giphy9.gif' :
+        index === 9 ? 'giphy10.gif' :
         ''; // fallback if out of range
 
     audio.addEventListener('play', () => {
